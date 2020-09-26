@@ -1,7 +1,8 @@
-var grid;
-var moves;
-var pos;
-var colorPrimary;
+var grid
+var moves
+var pos
+var colorPrimary
+var init_grid = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]
 
 // Setup blank Canvas with Grid
 function setup() {
@@ -13,20 +14,16 @@ function setup() {
     grid = blankGrid();
     pos = [grid.length - 1, grid.length - 1]
     // drawGrid()
-    colorPrimary=Math.floor((Math.random() * dataColors.length) + 1) -1
+    colorPrimary = Math.floor((Math.random() * dataColors.length) + 1) - 1
     updateCanvas();
-    
 }
 
 // Returns solved Grid
 function blankGrid() {
     console.log("blank grid");
-    return [[1, 2, 3, 4],
-    [5, 6, 7, 8],
-    [9, 10, 11, 12],
-    [13, 14, 15, 0]];
+    return [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]
 }
-function swapGridNumbers(a,b){
+function swapGridNumbers(a, b) {
     grid[a[0]][a[1]] = grid[a[0]][a[1]] ^ grid[b[0]][b[1]]
     grid[b[0]][b[1]] = grid[a[0]][a[1]] ^ grid[b[0]][b[1]]
     grid[a[0]][a[1]] = grid[a[0]][a[1]] ^ grid[b[0]][b[1]]
@@ -35,7 +32,7 @@ function moveDown() {
     if (pos[0] === 0) {
         return;
     }
-    swapGridNumbers(pos,[pos[0] - 1, pos[1]])
+    swapGridNumbers(pos, [pos[0] - 1, pos[1]])
     pos[0] = pos[0] - 1
     moves = moves + 1
     updateCanvas()
@@ -45,7 +42,7 @@ function moveUp() {
     if (pos[0] === 3) {
         return;
     }
-    swapGridNumbers(pos,[pos[0] + 1, pos[1]])
+    swapGridNumbers(pos, [pos[0] + 1, pos[1]])
     pos[0] = pos[0] + 1
     moves = moves + 1
     updateCanvas()
@@ -55,7 +52,7 @@ function moveRight() {
     if (pos[1] === 0) {
         return;
     }
-    swapGridNumbers(pos,[pos[0], pos[1] - 1])
+    swapGridNumbers(pos, [pos[0], pos[1] - 1])
     pos[1] = pos[1] - 1
     moves = moves + 1
     updateCanvas()
@@ -65,7 +62,7 @@ function moveLeft() {
     if (pos[1] === 3) {
         return;
     }
-    swapGridNumbers(pos,[pos[0], pos[1] + 1])
+    swapGridNumbers(pos, [pos[0], pos[1] + 1])
     pos[1] = pos[1] + 1
     moves = moves + 1
     updateCanvas()
@@ -73,9 +70,9 @@ function moveLeft() {
 
 function updateCanvas() {
     console.log("Update grid");
-    background(250);
     drawGrid();
     select('#moves').html(moves);
+    checkWin()
 }
 function getPosition(dataPosition) {
     if (dataPosition > 0 && dataPosition < 100) {
@@ -146,11 +143,11 @@ function drawGrid() {
             strokeWeight(0);
             let num = grid[i][j];
             stroke(0);
-            if(num){
+            if (num) {
                 //create rectangle
-                fill(dataColors[colorPrimary][Math.ceil(num/4)]);
+                fill(dataColors[colorPrimary][Math.ceil(num / 4)]);
                 rect(j * w, i * w, w, w);
-                
+
                 //fill number
                 textAlign(CENTER, CENTER);
                 noStroke();
@@ -158,8 +155,8 @@ function drawGrid() {
                 textSize(56);
                 text(num, j * w + w / 2, i * w + w / 2);
             }
-            else{
-                fill(dataColors[colorPrimary][Math.ceil(num/4)]);
+            else {
+                fill(dataColors[colorPrimary][Math.ceil(num / 4)]);
                 rect(j * w, i * w, w, w);
             }
         }
@@ -184,12 +181,24 @@ function shuffleData() {
         }
     }
     moves = m
+    select('#message').html("All the best");
     updateCanvas()
 }
 function resetData() {
-    colorPrimary=Math.floor((Math.random() * dataColors.length) + 1) -1
+    colorPrimary = Math.floor((Math.random() * dataColors.length) + 1) - 1
     grid = blankGrid()
     pos = [grid.length - 1, grid.length - 1]
     moves = 0
+    select('#message').html("All the best");
     updateCanvas()
+}
+
+function checkWin() {
+    if (moves !== 0 && moves < 10 && JSON.stringify(grid) == JSON.stringify(init_grid)) {
+        select('#message').html("Congrats Cheater 😺");
+    }
+    else if (moves !== 0 && JSON.stringify(grid) == JSON.stringify(init_grid)) {
+        select('#message').html("You Rock...!");
+        console.log("You Win...🤩")
+    }
 }
