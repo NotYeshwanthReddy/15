@@ -199,6 +199,7 @@ function checkWin() {
     }
     else if (moves !== 0 && JSON.stringify(grid) == JSON.stringify(init_grid)) {
         select('#message').html("You Rock...!");
+        alert("You Win...🤩");
         console.log("You Win...🤩")
     }
 }
