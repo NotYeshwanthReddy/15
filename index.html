@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
     <!--  p5.js is a JS client-side library for creating graphic and interactive experiences-->
@@ -18,8 +20,30 @@
 </head>
 
 <body>
-    <p style="font-size:32pt" id="moves">0</p>
-
+    <div class="container">
+        <header class="jumbotron">
+            <div class="row row-header align-items-center">
+                <h1 class="col-6 align-self-center">Moves:</h1>
+                <h1 class="col-6 align-self-center" id="moves">0</h1>
+            </div>
+        </header>
+    </div>
+    <div class="container">
+        <div class="row row-content align-items-center">
+            <div class="col-12 col-sm-4 order-sm-last col-md-3">
+                <h3>All the best</h3>
+            </div>
+        </div>
+        <div class=row row-content align-items-center">
+            <div class="col-12 col-md-8" id="sketch-holder"  style="text-align: center;">
+                <!-- Our sketch will go here! -->
+            </div>
+            <div class="col-12 col-md-4" style="text-align: center;">
+                <button class="btn btn-warning" onclick="resetData()">Reset</button>
+                <button class="btn btn-warning" onclick="shuffleData()">Shuffle</button>                
+            </div>
+        </div>
+    </div>
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
