@@ -1,66 +1,11 @@
-let colorsSizes = {
-    "1": {
-        size: 56,
-        color: "#FFF999"
-    },
-    "2": {
-        size: 56,
-        color: "#FFF999"
-    },
-    "3": {
-        size: 56,
-        color: "#FFF999"
-    },
-    "4": {
-        size: 56,
-        color: "#FFF999"
-    },
-    "5": {
-        size: 56,
-        color: "#CCF9AA"
-    },
-    "6": {
-        size: 56,
-        color: "#CCF9AA"
-    },
-    "7": {
-        size: 56,
-        color: "#CCF9AA"
-    },
-    "8": {
-        size: 56,
-        color: "#CCF9AA"
-    },
-    "9": {
-        size: 56,
-        color: "#49BB6C"
-    },
-    "10": {
-        size: 56,
-        color: "#49BB6C"
-    },
-    "11": {
-        size: 56,
-        color: "#49BB6C"
-    },
-    "12": {
-        size: 56,
-        color: "#49BB6C"
-    },
-    "13": {
-        size: 56,
-        color: "#2494C1"
-    },
-    "14": {
-        size: 56,
-        color: "#2494C1"
-    },
-    "15": {
-        size: 56,
-        color: "#2494C1"
-    },
-    "0": {
-        size: 56,
-        color: "#FFFFFF"
-    },
-}
+let dataColors = [
+    ["#FFFFFF", "#E5A8FF", "#C873FF", "#A736FF", "#9000FF"],
+    ["#FFFFFF", "#FFD180", "#FFAB40", "#FF9100", "#FF6D00"],
+    ["#FFFFFF", "#A7FFEB", "#64FFDA", "#1DE9B6", "#00BFA5"],
+    ["#FFFFFF", "#FF8A80", "#FF5252", "#FF1744", "#D50000"],
+    ["#FFFFFF", "#B9F6CA", "#69F0AE", "#00E676", "#00C853"],
+    ["#FFFFFF", "#CCFF90", "#B2FF59", "#76FF03", "#64DD17"],
+    ["#FFFFFF", "#FFE57F", "#FFD740", "#FFC400", "#FFAB00"],
+    ["#FFFFFF", "#CFD8DC", "#90A4AE", "#607D8B", "#455A64"],
+    ["#FFFFFF", "#80D8FF", "#40C4FF", "#00B0FF", "#0091EA"]
+]
