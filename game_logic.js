@@ -111,6 +111,7 @@ function mouseClicked() {
         return;
     }
 }
+ //test
 function keyPressed() {  // i.e evrytime i press a key!
     let played = true;
     switch (keyCode) {
