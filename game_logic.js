@@ -164,7 +164,6 @@ function drawGrid() {
 }
 
 function shuffleData() {
-    let m = moves
     for (let i = 0; i < 60; i++) {
         let arrow = Math.floor((Math.random() * 4) + 1);
         if (arrow === 1) {
@@ -180,7 +179,7 @@ function shuffleData() {
             moveRight();
         }
     }
-    moves = m
+    moves = 0
     select('#message').html("All the best");
     updateCanvas()
 }
@@ -201,5 +200,6 @@ function checkWin() {
         select('#message').html("You Rock...!");
         alert("You Win...🤩");
         console.log("You Win...🤩")
+        moves = 0
     }
 }
