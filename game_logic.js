@@ -21,11 +21,11 @@ function blankGrid() {
 
 function updateCanvas() {
     background(250);
-    drawGrid();
+    draw();
 }
 
 // Draws the given grid over canvas
-function drawGrid() {
+function draw() {
     var w = 100;
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
@@ -34,7 +34,6 @@ function drawGrid() {
             let val = grid[j][i];
             let s = val.toString();
 
-            stroke(0);
             fill(colorsSizes[s].color);
 
             rect(i * w, j * w, w, w);
