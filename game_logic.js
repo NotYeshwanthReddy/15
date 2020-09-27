@@ -15,7 +15,7 @@ function setup() {
     pos = [grid.length - 1, grid.length - 1]
     // drawGrid()
     colorPrimary = Math.floor((Math.random() * dataColors.length) + 1) - 1
-    updateCanvas();
+    shuffleData();
 }
 
 // Returns solved Grid
@@ -189,7 +189,7 @@ function resetData() {
     pos = [grid.length - 1, grid.length - 1]
     moves = 0
     select('#message').html("All the best");
-    updateCanvas()
+    shuffleData()
 }
 
 function checkWin() {
